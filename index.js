@@ -1,10 +1,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+// index.js tetején (az app létrehozása után)
+const path = require("path");
+
 const PORT = 3000;
 
 // Use the JSON body parser middleware
-app.use(bodyParser.json());
+app.use(express.json());
+
+// Statikus fájlok kiszolgálása a frontend mappából
+app.use(express.static(path.join(__dirname, "frontend")));
 
 let fours = [];
 let nextId = 1;
