@@ -21,7 +21,7 @@ addBtn.addEventListener("click", async () => {
 
         const data = await res.json();
         if (!res.ok) {
-            addResult.textContent = `Hiba: ${data.message}`;
+            addResult.textContent = `Hiba: a számnégyes érvénytelen vagy már hozzá lett adva`;
         } else {
             addResult.textContent = `Sikeresen hozzáadva: ID ${data.id}`;
         }
